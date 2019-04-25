@@ -1,0 +1,12 @@
+#!/bin/sh
+
+prog=$(basename $0)
+
+which gnumeric
+if [ $? -ne 0 ]
+then
+    echo "Please make sure have installed gnumeric before running ${prog}"
+    exit 127
+fi
+
+gnumeric $@
